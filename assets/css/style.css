@@ -589,7 +589,7 @@ section {
 .demo {
   position: relative;
   background-color: black;
-  height: 75vh;
+  /*height: 75vh;*/
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
@@ -608,6 +608,12 @@ section {
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.demo .demo_video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

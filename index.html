@@ -84,7 +84,7 @@
 
         <div class="row">
           <div class="col-lg-6 center">
-            <img src="website/assets/img/about-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/about-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <h2>Our objective is to create game levels that contain various desired attributes</h3>
@@ -105,14 +105,14 @@
 
     <!-- ======= Demo Section ======= -->
     <section id="Demo" class="demo section-bg">
-      <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-      </iframe>
-      <iframe width="420" height="315"
-      src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
-      </iframe> -->
-      <video playsinline="playsinline" muted="muted" loop="loop">
-        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-      </video>
+      <div class="demo_video">
+        <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+        </iframe> -->
+        <iframe src="https://drive.google.com/file/d/18rIrsAg0xP_ZJmw6lh3JXbuYns5VKBwH/preview" width="640" height="480" style="min-width: 100%;"></iframe>
+        <!-- <video playsinline="playsinline" muted="muted" loop="loop">
+          <source src="https://drive.google.com/file/d/18rIrsAg0xP_ZJmw6lh3JXbuYns5VKBwH/view?usp=sharing" type="video/mp4">
+        </video>-->
+      </div>
 
     </section><!-- End Demo Section -->
 
@@ -191,9 +191,7 @@
                 </div>
               </div>
               <div class="social">
-                <a href=""><i class="bx bxl-linkedin-square"></i></a>
-                <a href=""><i class="bx bxl-github"></i></a>
-                <a href=""><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/david-chen-783a1a110/"><i class="bx bxl-linkedin-square"></i></a>
                 </div>
             </div>
           </div>
@@ -252,7 +250,7 @@
             <a data-toggle="collapse" href="#method4" class="collapsed">Evaluation Metrics <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
             <div id="method4" class="collapse" data-parent=".method-list">
               <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                 We use Kullback–Leibler divergence (KL divergence), measures of how similar two probability distributions are, to evaluate generated levels with respect to ground-truth levels. A sliding window of size N x N captures our levels and ground-truth levels, which we then compute distinct squares and their occurrences as the probability distribution.
               </p>
             </div>
           </li>
