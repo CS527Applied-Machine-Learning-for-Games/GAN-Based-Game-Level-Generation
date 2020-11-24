@@ -730,24 +730,24 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Frequenty Asked Questions
+# Method Details
 --------------------------------------------------------------*/
-.faq {
+.method {
   padding-bottom: 60px;
 }
 
-.faq .faq-list {
+.method .method-list {
   padding: 0;
   list-style: none;
 }
 
-.faq .faq-list li {
+.method .method-list li {
   border-bottom: 1px solid #eee;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
-.faq .faq-list a {
+.method .method-list a {
   display: block;
   position: relative;
   font-family: #fd680e;
@@ -757,36 +757,43 @@ section {
   padding-right: 25px;
 }
 
-.faq .faq-list i {
+.method .method-list i {
   font-size: 24px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.faq .faq-list p {
+.method .method-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
 }
 
-.faq .faq-list .icon-show {
+.method .method-list .icon-show {
   display: none;
 }
 
-.faq .faq-list a.collapsed {
+.method .method-list a.collapsed {
   color: #343a40;
 }
 
-.faq .faq-list a.collapsed:hover {
+.method .method-list a.collapsed:hover {
   color: #fd680e;
 }
 
-.faq .faq-list a.collapsed .icon-show {
+.method .method-list a.collapsed .icon-show {
   display: inline-block;
 }
 
-.faq .faq-list a.collapsed .icon-close {
+.method .method-list a.collapsed .icon-close {
   display: none;
+}
+
+.method .method-image{
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*--------------------------------------------------------------
