@@ -6,7 +6,6 @@ from matplotlib import pyplot as plt
 from get_level import GetLevel
 
 
-
 class SimpleCMAES:
     def __init__(self, standard_deviation, population_size, noise_size, mean=None):
         self.population_size = population_size
@@ -43,7 +42,7 @@ class SimpleCMAES:
     def plot_cma(self, dir_path=None, count=0):
         self.es.logger.plot()
         # cma.plot()
-        plt.savefig(dir_path + 'CMAES_' + str(count)+'.png')
+        plt.savefig(dir_path + "CMAES_" + str(count) + ".png")
         # cma.s.figshow()
         # cma.s.figsave(str(count)+'.png')
         # self.es.s.figclose()

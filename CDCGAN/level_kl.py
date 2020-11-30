@@ -63,7 +63,7 @@ class LevelInfo:
 class KLTileDistribution:
     epsilon = 0.01
 
-    def __init__(self, window_size, l1, l2):
+    def __init__(self, l1, l2, window_size=(3, 3)):
         self.window_size = (
             window_size
             if isinstance(window_size, tuple)

@@ -9,7 +9,7 @@ from image_gen.image_gen import GameImageGenerator
 from tqdm import tqdm
 
 from cmaes import SimpleCMAES as cma
-from data_gen import MarioDataset
+from data_loader import MarioDataset
 from get_level import GetLevel as getLevel
 from level_kl import KLTileDistribution, LevelInfo
 from models.custom import Generator
@@ -91,32 +91,35 @@ def matrix_eval(level):
 
 
 def evaluate_kl(ori_lvl, gen_lvl):
-    return KLTileDistribution(3, gen_lvl, ori_lvl).compute_kl_loss()
+    return KLTileDistribution(
+        l1=gen_lvl, l2=ori_lvl, window_size=(3, 3)
+    ).compute_kl_loss()
 
 
 if __name__ == "__main__":
+    samples_per_member = 5
+    population_size = 1000
     conditional_channels = [
         0,
         1,
         6,
         7,
     ]  # channels on which generator is conditioned on
-    samples_per_member = 5
     dataset = MarioDataset()
     netG = Generator(
         latent_size=(len(conditional_channels) + 1, 14, 14), out_size=(13, 32, 32)
     )
-    netG.load_state_dict(torch.load("./netG_epoch_300000_0_32.pth"))
+    netG.load_state_dict(torch.load("./trained_models/netG_epoch_300000_0_32.pth"))
     # 300000
     mario_map = get_asset_map(game="mario")
     gen = GameImageGenerator(asset_map=mario_map)
     prev_frame, curr_frame = dataset[[120]]  # 51
     fixer = PipeFixer()
 
-    mean = np.load("best_sky_tile_member.npy")
+    # mean = np.load("best_sky_tile_member.npy")
 
     lse = cma(
-        standard_deviation=0.5, population_size=1000, noise_size=(14, 14), mean=mean
+        standard_deviation=0.5, population_size=population_size, noise_size=(14, 14),
     )  # , mean=mean.flatten())
     level_gen = getLevel(netG, gen, fixer, prev_frame, curr_frame, conditional_channels)
     count = 0
