@@ -59,4 +59,14 @@ python lse.py
 This defaults to `1000` population members per iteration, you can configure that by changing the `population_size` param in `__main__`.
 You can also configure the level samples that are generated per member by setting `samples_per_member` parameter. 
 
-If you want to define a custom fitness function, then simply define a new function which takes in the generated level as a `numpy array` and returns a custom fitness measure foir the level.
+If you want to define a custom fitness function, then simply define a new function which takes in the generated level as a `numpy array` and returns a custom fitness measure for the level.
+
+## Instructions to Orchestrate Generation of level with feature-noise params
+
+After performing LSE to find the best params for certain features, we can then orchestrate the level generation by running `demo_lse.py`, which loads the saved noise params with the trained generator and then presents the user with a menu to choose the features they want in next `frame_count=6` frames of the level.
+
+Command to run:
+
+```
+python demo_lse.py
+```
