@@ -36,6 +36,26 @@ pip install -e .
 ```
 while in `./image_gen` directory.
 
+# Multi-Stage GAN (MSGAN)
+
+This directory contains implementations of our Multi-Stage GAN architectures. The implementation is in TensorFlow and the trained models are in the `MSGAN/models/` directory.
+
+## Data
+
+The data files are present in the `MSGAN/` directory. `example_super_mario_bros_1.json`, `example_super_mario_bros_2.json`, and `example_super_mario_bros_2_cond.json` form the train data for the MSGAN (Original) architecture. `smb1_left.json`, `smb1_right.json`, and `smb1_str_right.json` form the train data for the MSGAN (Combined) architecture with 1:1 Condition:Generation ratio. `smb1_left_2.json`, `smb1_right_2.json`, and `smb1_str_right_2.json` form the train data for the MSGAN (Combined) architecture with 3:1 Condition:Generation ratio.
+
+## Instructions for training your own GAN
+
+Each notebook in the `MSGAN/` directory corresponds to a specific GAN architecture. `GAN_Level_Generation_Structure.ipynb`, `GAN_Level_Generation_Structure_Combined.ipynb`, and `GAN_Level_Generation_Color.ipynb` correspond the MSGAN (Original) Stage-1, MSGAN (Combined) Stage-1, and MSGAN Stage-2 architectures respectively. To train and generate your own models, simply run the necessary notebooks with the required data files (parts where you need to change the path to the data files are clearly marked with `# TODO` prompts).
+
+`GAN_Level_Generation.ipynb` contains our implementation of the baseline architecture outlined in:
+
+*V. Volz, J. Schrum, J. Liu, S. M. Lucas, A. Smith, and S. Risi, "Evolving mario levels in the latent space of a deep convolutional generative adversarial network," in Proceedings of the Genetic and Evolutionary Computation Conference, 2018, pp. 221–228.*
+
+## Generating Levels using trained model
+
+To generate your own levels, use the `GAN_Level_Generation_Results.ipynb` in the `MSGAN/` directory. Load the necessary trained models into the `generator_saved_structure` and `generator_saved_color` variables and run the `generate_level()` function with the loaded models.
+
 # Latent Space Exploration (LSE) using CMA-ES
 
 We perform Latent Space Exploration on the noise input to our Conditional DCGAN. The idea is to learn a mapping between certain areas of this noise to certain features. 
