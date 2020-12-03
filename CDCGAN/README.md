@@ -34,7 +34,7 @@ Make sure you've installed our `image_gen` package included in the repository by
 ```
 pip install -e .
 ```
-while in `./image_gen` directory.
+while in `.ImageGenerators/image_gen` directory.
 
 # Latent Space Exploration (LSE) using CMA-ES
 
